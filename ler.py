@@ -4,15 +4,19 @@ import os
 import glob
 
 
-print(glob.glob('*.py'))
+ext = input("Digite a extensao desejada para ler : ")
 
-for each in glob.glob('*.py'):
+print(glob.glob('*.'+ext))
+
+for each in glob.glob('*.'+ext):
 	for line in open(each):
 		print('#',line,end='')
 	print()
 	print()
 
-print(os.system("locate .py > arq"))
+
+
+print(os.system("locate ."+ext+" > arq"))
 
 with open('arq','r') as arq:
 	for arquivo in arq:
